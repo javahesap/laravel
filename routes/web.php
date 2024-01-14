@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PersonelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+});  
+ /* 
+Route::get('/personels', function () {
+    return view('personels.index');
+});  */
+
+
+Route::get('/personels', [PersonelController::class, 'index']);
+ 
+Route::get('/user/{id}', [UserController::class, 'show']);
