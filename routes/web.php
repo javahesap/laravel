@@ -20,16 +20,16 @@ use App\Http\Controllers\UsersController;
 Route::get('/', function () {
     return view('welcome');
 });  */
- /* 
-Route::get('/personels', function () {
-    return view('personels.index');
-});  */
+ 
+Route::get('/', function () {
+    return view('welcome');
+});  
 
 
-Route::get('/personels', [PersonelController::class, 'index']);
+///Route::get('/', [HomeController::class, 'welcome'])->name('home');
  
 Route::get('/user/{id}', [UserController::class, 'show']);
 
-Route::get('/', [HomeController::class, 'welcome'])->name('home');
+//Route::get('/', [HomeController::class, 'welcome'])->name('home');
 Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
 Route::get('/users/{user}', [UsersController::class, 'show'])->name('users.show');
