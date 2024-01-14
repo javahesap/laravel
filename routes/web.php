@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonelController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,10 @@ use App\Http\Controllers\PersonelController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
-});  
+});  */
  /* 
 Route::get('/personels', function () {
     return view('personels.index');
@@ -26,3 +29,7 @@ Route::get('/personels', function () {
 Route::get('/personels', [PersonelController::class, 'index']);
  
 Route::get('/user/{id}', [UserController::class, 'show']);
+
+Route::get('/', [HomeController::class, 'welcome'])->name('home');
+Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
+Route::get('/users/{user}', [UsersController::class, 'show'])->name('users.show');
