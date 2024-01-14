@@ -8,3 +8,9 @@
         <p>Laravel uygulamanızın ana sayfasına hoş geldiniz.</p>
     </div>
 @endsection
+<!-- resources/views/welcome.blade.php -->
+
+<hr>
+@component('components.component-name', ['title' => 'Merhaba', 'content' => 'Laravel Bileşenleri', 'type' => 'password'])
+    <!-- İsteğe Bağlı İçerik -->
+@endcomponent
